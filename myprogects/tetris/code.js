@@ -18,6 +18,7 @@ for (let row = -2; row < 20; row++) {
     playfield[row][col] = 0;
   }
 }
+let score = 0;
 
 // как рисовать каждую фигуру
 
@@ -189,6 +190,7 @@ function placeTetromino() {
       for (let r = row; r >= 0; r--) {
         for (let c = 0; c < playfield[r].length; c++) {
           playfield[r][c] = playfield[r-1][c];
+          score++;
         }
       }
     }
@@ -199,6 +201,11 @@ function placeTetromino() {
   }
   // получаем следующую фигуру
   tetromino = getNextTetromino();
+}
+function drawScore() { // функция, рисующая счет игрока
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#ebebeb";
+  ctx.fillText(`Score: ${score}`, 8, 20);
 }
 
   // показываем надпись Game Over
@@ -228,7 +235,7 @@ function loop() {
   rAF = requestAnimationFrame(loop);
   // очищаем холст
   context.clearRect(0,0,canvas.width,canvas.height);
-
+  
   // рисуем игровое поле с учётом заполненных фигур
   for (let row = 0; row < 20; row++) {
     for (let col = 0; col < 10; col++) {
@@ -267,6 +274,7 @@ function loop() {
 
           // и снова рисуем на один пиксель меньше
           context.fillRect((tetromino.col + col) * grid, (tetromino.row + row) * grid, grid-1, grid-1);
+          
         }
       }
     }
@@ -318,4 +326,4 @@ document.addEventListener('keydown', function(e) {
 });
 
 // старт игры
-rAF = requestAnimationFrame(loop);
+rAF = requestAnimationFrame(loop, drawScore);
