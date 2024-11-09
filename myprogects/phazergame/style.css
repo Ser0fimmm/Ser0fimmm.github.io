@@ -1,0 +1,15 @@
+.h1 {
+    margin-left: 38%;
+    color: #374709;
+}
+body{
+    background-color: #F2F2EF;
+    margin: 0;
+}
+#game {
+    position: absolute;
+    left: 20%;
+    top: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

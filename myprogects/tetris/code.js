@@ -19,6 +19,7 @@ for (let row = -2; row < 20; row++) {
   }
 }
 let score = 0;
+let record = 0;
 
 // как рисовать каждую фигуру
 
@@ -190,7 +191,7 @@ function placeTetromino() {
       for (let r = row; r >= 0; r--) {
         for (let c = 0; c < playfield[r].length; c++) {
           playfield[r][c] = playfield[r-1][c];
-          score++;
+          score += 10
         }
       }
     }
@@ -198,15 +199,24 @@ function placeTetromino() {
       // переходим к следующему ряду
       row--;
     }
+    var Storage_size = localStorage.length;
+    if (Storage_size > 0) {
+
+      record = localStorage.record;
+    if (score > record) {
+      // ставим его очки как рекорд
+      record = score;
+      // заносим в хранилище значение рекорда
+      localStorage.record = record;
+      
+    
   }
   // получаем следующую фигуру
   tetromino = getNextTetromino();
 }
-function drawScore() { // функция, рисующая счет игрока
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#ebebeb";
-  ctx.fillText(`Score: ${score}`, 8, 20);
+  }
 }
+
 
   // показываем надпись Game Over
   function showGameOver() {
@@ -226,7 +236,15 @@ function drawScore() { // функция, рисующая счет игрока
     context.textBaseline = 'middle';
     context.fillText('GAME OVER!', canvas.width / 2, canvas.height / 2);
   }
-
+  function showScore() {
+    contextScore.clearRect(0,0,canvasScore.width,canvasScore.height);  
+    contextScore.globalAlpha = 1;
+    contextScore.fillStyle = 'white';
+    contextScore.font = '18px Courier New';
+    contextScore.fillText('Очков:   ' + score, 15, 50);
+    contextScore.fillText('Рекорд:  ' + record, 160, 50);
+  
+  }
 
 
 // главный цикл игры
@@ -326,4 +344,4 @@ document.addEventListener('keydown', function(e) {
 });
 
 // старт игры
-rAF = requestAnimationFrame(loop, drawScore);
+rAF = requestAnimationFrame(loop);
