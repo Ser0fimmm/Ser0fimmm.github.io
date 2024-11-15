@@ -1,6 +1,9 @@
-// получаем доступ к холсту
+// получаем доступ к основному холсту
 const canvas = document.getElementById('game');
-const context = canvas.getContext('2d');
+const context = canvas.getContext('2d')
+const canvasScore = document.getElementById('score');
+const contextScore = canvasScore.getContext('2d');
+
 // размер квадратика
 const grid = 32;
 // массив с последовательностями фигур, на старте — пустой
@@ -18,8 +21,6 @@ for (let row = -2; row < 20; row++) {
     playfield[row][col] = 0;
   }
 }
-let score = 0;
-let record = 0;
 
 // как рисовать каждую фигуру
 
@@ -81,9 +82,28 @@ let rAF = null;
 // флаг конца игры, на старте — неактивный
 let gameOver = false;
 
+// количество набранных очков на старте
+let score = 0;
+// рекорд игры
+let record = 0;
+// текущий уровень сложности
+let level = 1;
+
+
+
+
+
+// Узнаём размер хранилища
+var Storage_size = localStorage.length;
+// Если в хранилище уже что-то есть…
+if (Storage_size > 0) {
+  // …то достаём оттуда значение рекорда и имя чемпиона
+  record = localStorage.record;
+  
+}
 
 // Функция возвращает случайное число в заданном диапазоне
-// https://stackoverflow.com/a/1527820/2124254
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -92,7 +112,7 @@ function getRandomInt(min, max) {
 }
 
 // создаём последовательность фигур, которая появится в игре
-//https://tetris.fandom.com/wiki/Random_Generator
+
 function generateSequence() {
   // тут — сами фигуры
   const sequence = ['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
@@ -125,15 +145,15 @@ function getNextTetromino() {
 
   // вот что возвращает функция 
   return {
-    name: name,      // название фигуры (L, O, и т.д.)
+    name: name,      // название фигуры (L, O, и т. д.)
     matrix: matrix,  // матрица с фигурой
-    row: row,        // текущая строка (фигуры стартую за видимой областью холста)
+    row: row,        // текущая строка (фигуры стартуют за видимой областью холста)
     col: col         // текущий столбец
   };
 }
 
 // поворачиваем матрицу на 90 градусов
-// https://codereview.stackexchange.com/a/186834
+
 function rotate(matrix) {
   const N = matrix.length - 1;
   const result = matrix.map((row, i) =>
@@ -187,11 +207,23 @@ function placeTetromino() {
     // если ряд заполнен
     if (playfield[row].every(cell => !!cell)) {
 
+      score += 10;
+      // считаем уровень
+      level = Math.floor(score/100) + 1;
+      // если игрок побил прошлый рекорд
+      if (score > record) {
+        // ставим его очки как рекорд
+        record = score;
+        // заносим в хранилище значение рекорда
+        localStorage.record = record;
+        // заносим в хранилище его имя
+        localStorage.recordName = recordName;
+      }
+
       // очищаем его и опускаем всё вниз на одну клетку
       for (let r = row; r >= 0; r--) {
         for (let c = 0; c < playfield[r].length; c++) {
           playfield[r][c] = playfield[r-1][c];
-          score += 10
         }
       }
     }
@@ -199,24 +231,10 @@ function placeTetromino() {
       // переходим к следующему ряду
       row--;
     }
-    var Storage_size = localStorage.length;
-    if (Storage_size > 0) {
-
-      record = localStorage.record;
-    if (score > record) {
-      // ставим его очки как рекорд
-      record = score;
-      // заносим в хранилище значение рекорда
-      localStorage.record = record;
-      
-    
   }
   // получаем следующую фигуру
   tetromino = getNextTetromino();
 }
-  }
-}
-
 
   // показываем надпись Game Over
   function showGameOver() {
@@ -236,16 +254,17 @@ function placeTetromino() {
     context.textBaseline = 'middle';
     context.fillText('GAME OVER!', canvas.width / 2, canvas.height / 2);
   }
-  function showScore() {
-    contextScore.clearRect(0,0,canvasScore.width,canvasScore.height);  
-    contextScore.globalAlpha = 1;
-    contextScore.fillStyle = 'white';
-    contextScore.font = '18px Courier New';
-    contextScore.fillText('Очков:   ' + score, 15, 50);
-    contextScore.fillText('Рекорд:  ' + record, 160, 50);
-  
-  }
 
+function showScore() {
+  contextScore.clearRect(0,0,canvasScore.width,canvasScore.height);
+  contextScore.globalAlpha = 1;
+  contextScore.fillStyle = 'white';
+  contextScore.font = '18px Courier New';
+  contextScore.fillText('Уровень: ' + level, 15, 20);
+  contextScore.fillText('Очков:   ' + score, 15, 50);
+  contextScore.fillText('Рекорд:  ' + record, 160, 50);
+
+}
 
 // главный цикл игры
 function loop() {
@@ -253,7 +272,7 @@ function loop() {
   rAF = requestAnimationFrame(loop);
   // очищаем холст
   context.clearRect(0,0,canvas.width,canvas.height);
-  
+
   // рисуем игровое поле с учётом заполненных фигур
   for (let row = 0; row < 20; row++) {
     for (let col = 0; col < 10; col++) {
@@ -267,11 +286,14 @@ function loop() {
     }
   }
 
+  // выводим статистику
+  showScore();
+
   // рисуем текущую фигуру
   if (tetromino) {
 
-    // фигура сдвигается вниз каждые 35 кадров
-    if (++count > 35) {
+    // фигура сдвигается вниз каждые 36 кадров минус значение текущего уровня. Чем больше уровень, тем быстрее падает.
+    if (++count > (36 - level)) {
       tetromino.row++;
       count = 0;
 
@@ -292,7 +314,6 @@ function loop() {
 
           // и снова рисуем на один пиксель меньше
           context.fillRect((tetromino.col + col) * grid, (tetromino.row + row) * grid, grid-1, grid-1);
-          
         }
       }
     }

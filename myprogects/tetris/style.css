@@ -1,9 +1,6 @@
-h1 {
-    color: aliceblue;
-}
 html, body {
   height: 100%;
-  margin: 10px;
+  margin: 0;
 }
 /*делаем чёрный фон и выравниваем всё по центру*/
 body {
@@ -16,7 +13,7 @@ body {
 canvas {
   border: 1px solid white;
 }
-a {
-    color: aliceblue;
-    size: 40px;
+h1, a {
+  color: white;
+  margin: 10px;
 }
