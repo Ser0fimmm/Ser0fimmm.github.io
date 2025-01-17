@@ -1,21 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Pairs</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Найди пару</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- подключаем нормализатор CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<!-- подключаем свои стили -->
+	<link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
-    <div id="game"></div>
-    <script src="code.js"></script>
-    <div class="card" data-id="1"><img src="image1.png" alt="Image 1"></div>
-    <div class="card" data-id="1"><img src="image1.png" alt="Image 1"></div>
-    <div class="card" data-id="1"><img src="image2.png" alt="Image 2"></div>
-    <div class="card" data-id="1"><img src="image2.png" alt="Image 2"></div>
-    <div class="card" data-id="1"><img src="image3.png" alt="Image 3"></div>
-    <div class="card" data-id="1"><img src="image3.png" alt="Image 3"></div>
-    <div class="card" data-id="1"><img src="image4.png" alt="Image 4"></div>
-    <div class="card" data-id="1"><img src="image4.png" alt="Image 4"></div>
+    >
+	<!-- общий блок для всего -->
+	<div class="wrap">
+        <h1>Игра - Найди пару на js</h1>
+		<!-- блок с игрой -->
+		<div class="game"></div>
+		<!-- модальное окно, которое появится после сбора всех пар -->
+		<div class="modal-overlay">
+			<div class="modal">
+				<!-- поздравительная надпись -->
+				<h2 class="winner">Победа!</h2>
+				<!-- кнопка перезапуска игры -->
+				<button class="restart">Сыграем ещё?</button>
+                <a href="../../index.html" class="backst">Вернуться на основной сайт</a>
+			</div>
+		</div>
+  </div>
+
+	  <!-- подключаем jQuery -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<!-- и наш скрипт -->
+	<script  src="code.js"></script>
+
 </body>
 </html>
