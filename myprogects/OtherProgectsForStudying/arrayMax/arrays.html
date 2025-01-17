@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Массивы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="code1.js"></script>
+    <h1>Работа с массивами | <a href="../../../index.html">Вернуться на основной сайт</a></h1>
+    <div class="all">
+        <div class="myarray" id="myarray">
+            <p>Добавьте свое число в массив:</p>
+            <input type="number" id="input"> 
+            <button onclick="addnum()">Добавить</button>
+            <p id="urarray"></p>
+            <p id="myevenarray"></p>
+            <p id="uroddarray"></p>
+            <p id="max"></p>
+            <p id="min"></p>
+            <p id="rne"></p>
+            <p id="rpn"></p>
+        </div>
+       
+      <div class="operations" id="operations">
+            <p>Операции: </p>
+            <button onclick="SortArrayEven(userarray, evenarray)">Сортировать массив по четности значений</button>
+            <button onclick="SortArrayOdd(userarray, oddarray)">Сортировать массив по нечетности значений</button>
+            <button onclick="FindMaxInArray(userarray)">Вычислить максимальное значение массива</button>
+            <button onclick="FindMinInArray(userarray)">Вычислить минимальное значение массива</button>
+            <button onclick="NumberOfRepeatingNumbersInArray(userarray)">Проверить, есть ли пары повторяющихся чисел</button>
+      </div>
+      <div class="desc">
+        <p>По <a href="https://github.com/Ser0fimmm/Ser0fimmm.github.io/blob/main/myprogects/RNG%26ArrayFunctionLibrary.js">этой ссылке</a> вы можете найти библиотеку функций для работы с массивами на JavaScript, написанную лично мной и активно мной используемую. Примеры функций оттуда показаны здесь, на этом сайте.</p>
+      </div>
+      <p class="autor">Выполнил Роман Молчанов, ученик школы Cody по своему энтузиазму, ночью за 2.5 часа :)</p>
+    </div>
+    
+    
+    
+</body>
+</html>

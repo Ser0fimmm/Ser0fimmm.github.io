@@ -19,17 +19,17 @@ function SortArrayEven(ArrayForSort, EvenArray) {
         }  
     }
 } // Sorts array for even numbers to new array
-function SortArrayNotEven(ArrayForSort, NotEvenArray){
+function SortArrayOdd(ArrayForSort, OddArray){
     for (let index = 0; index < ArrayForSort.length; index++) {
         const element = ArrayForSort[index];
         if (element % 2 != 0) {
-            NotEvenArray.push(ArrayForSort[index]); 
+            OddArray.push(ArrayForSort[index]); 
         }  
     }
 }// Sorts array for not even numbers to new array
-function ArraySortForEvenAndNotEven(ArrayForSort, EvenArray, NotEvenAray) {
+function ArraySortForEvenAndOdd(ArrayForSort, EvenArray, OddAray) {
     SortArrayEven(ArrayForSort, EvenArray); 
-    SortArrayNotEen(ArrayForSort, NotEvenAray);  
+    SortArrayNotEen(ArrayForSort, OddAray);  
 }// Sorts array for even and not even numbers to two new arrays
 function FindMaxInArray(Array){
     for (let index = 0; index < Array.length; index++) {

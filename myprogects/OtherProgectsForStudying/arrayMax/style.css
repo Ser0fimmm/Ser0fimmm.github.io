@@ -1,0 +1,76 @@
+h1 {
+    text-align: center;
+}
+.myarray {
+    position: absolute;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: rgb(191, 190, 216);
+    width: 320px;
+    word-wrap: break-word;
+    box-shadow: 0 0 10px 1px ;
+}
+a {
+    text-align: center;
+    color: black;
+}
+.operations {
+    position: absolute;
+    left: 370px;
+    margin: 20px;
+    padding: 15px;
+    width: 400;
+    border: 1px solid gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: rgb(191, 190, 216);
+    width: 320px;
+    word-wrap: break-word;
+    box-shadow: 0 0 10px 1px ;
+}
+button {
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    transition: all 0.5s ease;
+}
+button:hover {
+    transform: scale(110%);
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+body {
+    background-color: #ebebeb;
+}
+.all {
+    position: absolute;
+    left: 19%;
+}
+.desc {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    left: 740px;
+    font-size: 20px;
+    background-color: rgb(191, 190, 216); 
+    word-wrap: break-word;
+    box-shadow: 0 0 10px 1px ;
+    width: 320px;
+    padding: 15px;
+    margin: 20px; 
+}
+.autor {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    left: 740px;
+    top: 245px;
+    width: 310px;
+    font-size: 20px;
+    background-color: rgb(191, 190, 216); 
+    word-wrap: break-word;
+    box-shadow: 0 0 10px 1px ;
+    padding: 20px;
+    margin: 20px; 
+}
