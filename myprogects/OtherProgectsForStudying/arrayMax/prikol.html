@@ -6,8 +6,18 @@
     <title>проверьте консоль</title>
 </head>
 <body>
+    <script src="codeforweb.js"></script>
     <script src="code.js"></script>
-    <p id="u">u</p>
-    <p id="s">s</p>
+    <h1>Работа с числовыми массивами</h1>
+    <p>Введите число в массив</p>
+    <input id="newarrayelement" type="number" min="10">
+    <button onclick="addnumbetoarray()">Добавить</button>
+    <p id="inputarray"></p>
+    <button onclick="SortArrayEven1(InputArray)">Сортировать четные значения</button>
+    <p id="eveninputarray"></p>
+    <button onclick="SortArrayNotEven1(InputArray)">Сортировать нечетные значения</button>
+    <p id="noteveninputarray"></p>
+    <button onclick="RepeatingNumbersExistanceInArray1(InputArray)">Проверить массив на повторяющиеся значения</button>
+    <p id="repeatingnums"></p>
 </body>
 </html>

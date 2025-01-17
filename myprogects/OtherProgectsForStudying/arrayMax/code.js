@@ -65,7 +65,7 @@ function SortArrayEven(ArrayForSort, EvenArray,) { //функция для со�
     }
 }
 
-function SortArrayNotEen(ArrayForSort,NotEvenArray){//функция для сортировки нечетных значений массива в новый массив
+function SortArrayNotEven(ArrayForSort,NotEvenArray){//функция для сортировки нечетных значений массива в новый массив
     for (let index = 0; index < ArrayForSort.length; index++) {
         const element = ArrayForSort[index];
         if (element % 2 != 0){//если число нечетное (идет проверка осатка при делении на 2)
@@ -76,7 +76,7 @@ function SortArrayNotEen(ArrayForSort,NotEvenArray){//функция для со
 
 function ArraySortForEvenAndNotEven(ArrayForSort, EvenArray, NotEvenAray) {//функция, сортирующая массив на 2 других: четные и нечетные значения в 2 отдельных массива
     SortArrayEven(ArrayForSort, EvenArray); //вызывает функцию для сортировки четных значений в массива
-    SortArrayNotEen(ArrayForSort, NotEvenAray); //вызывает функцию для сортировки нечетных значений в массива
+    SortArrayNotEven(ArrayForSort, NotEvenAray); //вызывает функцию для сортировки нечетных значений в массива
     
 }//да, просто и отчасти глупо, но это отдельный случай чтобы сэкономить место и повысить понимание происходящего
 
@@ -121,15 +121,14 @@ let arr6 = []
 
 function RepeatingNumbersInArrayToNewArray(array, ArrayOfRepeatingNumbres) {
     for (let index = 0; index < array.length; index++) {
+        array.sort();
         const element = array[index];
         const element2 = array[index + 1];
         if (element == element2) {
-            ArrayOfRepeatingNumbres.push(array[index]);
-            ArrayOfRepeatingNumbres.push(array[index + 1])
-        } //Пока что оно не работает никак и фактически бесполезно. Не берите в голову эту функцию, она пока не готова.
-        else if(element != element2) {
+            
+            ArrayOfRepeatingNumbres.push(element);
             continue;
-        }   
+        } //Пока что оно не работает никак и фактически бесполезно. Не берите в голову эту функцию, она пока не готова.
     }
 
 }
@@ -142,4 +141,6 @@ console.log(ArrayRepeatingNumbersExistance(arr3))
 console.log(NumberOfRepeatingNumbersInArray(arr3))
 console.log(arr6)
 // этот код можно подгонять куда угодно в любой другой код
+
+
 

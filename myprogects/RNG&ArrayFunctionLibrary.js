@@ -83,3 +83,14 @@ function NumberOfRepeatingNumbersInArray(array) {
     }
     return i;
 }// returns the number of pairs of the repeating numbers in array
+function SumArrayElementsFromAToB (array, a, b) { 
+    let summ = 0;
+    const c = Math.max(a,b);
+    const d = Math.min(a,b);
+    for (let index = d; index <= c; index++) {
+            const element = array[index];
+            sum += element;
+    }
+    return summ;
+}// returns summ of all array elements from A index to B index.
+// works well even if A > B \ replases A with B, B with A
