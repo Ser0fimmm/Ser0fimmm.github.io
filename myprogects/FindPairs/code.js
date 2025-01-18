@@ -2,12 +2,12 @@
 // © 2014 Nate Wiley
 // License -- MIT
 
-// весь скрипт — это одна большая функция
+
 (function(){
-	
+	let BadGuesses = 0;
 	//  объявляем объект, внутри которого будет происходить основная механика игры
 	var Memory = {
-
+        
 		// создаём карточку
 		init: function(cards){
 			//  получаем доступ к классам
@@ -77,6 +77,7 @@
 						} else {
 							// обнуляем первую карточку
 							_.guess = null;
+                            BadGuesses++;
 							// не ждём переворота второй карточки
 							_.paused = true;
 							// ждём полсекунды и переворачиваем всё обратно
@@ -101,6 +102,7 @@
 			setTimeout(function(){
 				Memory.showModal();
 				Memory.$game.fadeOut();
+				document.getElementById("badg").textContent = `Неудачных попыток: ${BadGuesses}.`
 			}, 1000);
 		},
 

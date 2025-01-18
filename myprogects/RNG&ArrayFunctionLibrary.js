@@ -1,16 +1,39 @@
+/**
+ * Генератор случайных чисел
+ * @param {*} min минимальное возможное значение
+ * @param {*} max максимальное возможное значение
+ * @returns Случайное число
+ */
 function RandomNumberGnerator(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
-}// basic RNG
+}
+/**
+ * Заполнение массива случайными значениями
+ * @param {*} array массив для заполнения
+ * @param {*} min минимальное возможное значение элемента
+ * @param {*} max максимальное возможное значение элемента
+ */
 function FillArray(array, min, max) { 
     for (let index = 0; index < array.length; index++) {
         array[index] = RandomNumberGnerator(min, max) 
     }
-}// Fills up empty array with random numbers. \ the array must exist with a certain number of elements. \ examplle: arrray = new Array(n), where n = array lenght
+}
+/**
+ * Заполнение массива случайными значениями
+ * @param {*} array массив для заполнения
+ * @param {*} min минимальное возможное значение элемента
+ * @param {*} max максимальное возможное значение элемента
+ */
 function RandomlyFillArray(array, min, max){
     for (let index = 0; index < array.length; index++) {
         array[index] = Math.floor(Math.random() * (max - min) + min) 
     }
-}// does absolutly the same operation as the previous FillArray function, but without using RNG Function. use one of the options, depending on whether you use RNG in your code or not. 
+}
+/**
+ * Перенос четных значений массива в отдельный массив
+ * @param {*} ArrayForSort Массив для сортировки
+ * @param {*} EvenArray Масив для четных значений
+ */ 
 function SortArrayEven(ArrayForSort, EvenArray) { 
     for (let index = 0; index < ArrayForSort.length; index++) {
         const element = ArrayForSort[index];
@@ -18,7 +41,12 @@ function SortArrayEven(ArrayForSort, EvenArray) {
             EvenArray.push(ArrayForSort[index]);
         }  
     }
-} // Sorts array for even numbers to new array
+} 
+/**
+ * Перенос нечетных значений в отдельный массив
+ * @param {*} ArrayForSort Масив для сортировки
+ * @param {*} OddArray Массив для нечетных значений
+ */
 function SortArrayOdd(ArrayForSort, OddArray){
     for (let index = 0; index < ArrayForSort.length; index++) {
         const element = ArrayForSort[index];
@@ -26,11 +54,42 @@ function SortArrayOdd(ArrayForSort, OddArray){
             OddArray.push(ArrayForSort[index]); 
         }  
     }
-}// Sorts array for not even numbers to new array
+}
+/**
+ * Сортировка масива по четности значений в два отдельных массива
+ * @param {*} ArrayForSort Массив для сортировки
+ * @param {*} EvenArray Массив для четных значений
+ * @param {*} OddAray Массив для нечетных значений
+ */
 function ArraySortForEvenAndOdd(ArrayForSort, EvenArray, OddAray) {
     SortArrayEven(ArrayForSort, EvenArray); 
     SortArrayNotEen(ArrayForSort, OddAray);  
-}// Sorts array for even and not even numbers to two new arrays
+}
+/**
+ * Сортировка масива по четности значений в два отдельных массива
+ * @param {*} ArrayForSort Массив для сортировки
+ * @param {*} EvenArray Массив для четных значений
+ * @param {*} OddAray Массив для нечетных значений
+ */
+function ArraySortForEvenAndOddW(ArrayForSort, EvenArray, OddAray) {
+    for (let index = 0; index < ArrayForSort.length; index++) {
+        const element = ArrayForSort[index];
+        if (element % 2 == 0) {
+            EvenArray.push(ArrayForSort[index]);
+        }  
+    }
+    for (let index = 0; index < ArrayForSort.length; index++) {
+        const element = ArrayForSort[index];
+        if (element % 2 != 0) {
+            OddArray.push(ArrayForSort[index]); 
+        }  
+    }
+}
+/**
+ * Вычисление максимального значения в массиве
+ * @param {*} Array Массив 
+ * @returns Максимальное значение массива
+ */
 function FindMaxInArray(Array){
     for (let index = 0; index < Array.length; index++) {
         const element = Array[index];
@@ -40,7 +99,12 @@ function FindMaxInArray(Array){
         }
         return Maxelement;
     }
-}// Returns maximum value in Array 
+}
+/**
+ * Вычисление инимального значениф в массиве
+ * @param {*} Array Массив
+ * @returns Минимальное значение массива
+ */
 function FindMinInArray(Array){
     for (let index = 0; index < Array.length; index++) {
         const element = Array[index];
@@ -50,7 +114,12 @@ function FindMinInArray(Array){
         }
         return MinElement;
     }
-}// Returns minimum value in Array
+}
+/**
+ * Проверка на наличие в массиве повторных значений
+ * @param {*} array Массив
+ * @returns Наличие в массиве повторных значений
+ */
 function RepeatingNumbersExistanceInArray(array) {
     let i = 0;
     array.sort((a, b) => a - b);
@@ -67,7 +136,12 @@ function RepeatingNumbersExistanceInArray(array) {
     }
     if (i >= 1) return true;
     else if (i == 0) return false;
-}// returns true if array has repeating numbers and false if it does'nt
+}
+/**
+ * Вычисление кол-ва пар повторяющихся значений в массиве
+ * @param {*} array Массив
+ * @returns кол-во пар повторяющихся значений
+ */
 function NumberOfRepeatingNumbersInArray(array) {
     let i = 0;
     array.sort((a, b) => a - b);
@@ -82,7 +156,14 @@ function NumberOfRepeatingNumbersInArray(array) {
         }   
     }
     return i;
-}// returns the number of pairs of the repeating numbers in array
+}
+/**
+ * Вычисление суммы значений позиций от a до b в массиве
+ * @param {*} array Массив
+ * @param {*} a Начальная позиция
+ * @param {*} b Конечная позиция
+ * @returns Сумма значений позиций от a до b
+ */
 function SumArrayElementsFromAToB (array, a, b) { 
     let summ = 0;
     const c = Math.max(a,b);
@@ -92,5 +173,21 @@ function SumArrayElementsFromAToB (array, a, b) {
             sum += element;
     }
     return summ;
-}// returns summ of all array elements from A index to B index.
-// works well even if A > B \ replases A with B, B with A
+}
+/**
+ * Вычисление разности значений позиций массива от a до b
+ * @param {*} array Массив
+ * @param {*} a Начальная позиция (Уменьшаемое)
+ * @param {*} b Конечная позиция (Последнее вычитаемое)
+ * @returns  разность значений позиций массива от a до b
+ */
+function DifferenceAraayElementsFromAToB(array, a, b) {
+    const c = Math.max(a,b);
+    const d = Math.min(a,b);
+    let diff = c;
+    for (let index = d; index <= c; index++) {
+            const element = array[index];
+            diff += element;
+    }
+    return diff;
+}
