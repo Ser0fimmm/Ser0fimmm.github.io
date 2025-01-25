@@ -22,12 +22,21 @@
             <p id="rne"></p>
             <p id="rpn"></p>
         </div>
+
+        <div class="random" id="random">
+            <p>Сгенерируйте массив из случайных чисел:</p>
+            <button id="randomarray" onclick="randomarray()">Сгенерировать</button>
+            <p id="rngarray"></p>
+            <p id="randomeven"></p>
+            <p id="rngoddarray"></p>
+            <p id="maxrng"></p>
+        </div>
        
       <div class="operations" id="operations">
             <p>Операции: </p>
-            <button onclick="SortArrayEven(userarray, evenarray)">Сортировать массив по четности значений</button>
-            <button onclick="SortArrayOdd(userarray, oddarray)">Сортировать массив по нечетности значений</button>
-            <button onclick="FindMaxInArray(userarray)">Вычислить максимальное значение массива</button>
+            <button onclick="SortArrayEven()">Сортировать массив по четности значений</button>
+            <button onclick="SortArrayOdd()">Сортировать массив по нечетности значений</button>
+            <button onclick="FindMaxInArray()">Вычислить максимальное значение массива</button>
             <button onclick="FindMinInArray(userarray)">Вычислить минимальное значение массива</button>
             <button onclick="NumberOfRepeatingNumbersInArray(userarray)">Проверить, есть ли пары повторяющихся чисел</button>
       </div>
