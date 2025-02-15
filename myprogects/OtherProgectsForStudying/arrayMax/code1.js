@@ -69,16 +69,30 @@ function FindMaxInArray(){
         document.getElementById("maxrng").textContent = `Максимальное значение: ${maximum1}.`;
 }
 }
-function FindMinInArray(Array){
-    for (let index = 0; index < Array.length; index++) {
-        const element = Array[index];
-        let MinElement = Array[0];
-        if (element < MinElement) { 
-            MinElement = element;
+function FindMinInArray() {
+    let conf = confirm("OK, если свой массив | NO / Отмена, если случайный массив");
+    if (conf == true) {
+        for (let index = 0; index < userarray.length; index++) {
+            const element = userarray[index];
+            let MinElement = userarray[0];
+            if (element < MinElement) { 
+                MinElement = element;
+            }
+            document.getElementById("min").textContent = `Минимальное значение: ${MinElement}.`;
         }
-        document.getElementById("min").textContent = `Минимальное значение: ${MinElement}.`;
+    }
+    if (conf == false){
+        for (let index = 0; index < rngarray.length; index++) {
+            const element = rngarray[index];
+            let MinElement = rngarray[0];
+            if (element < MinElement) { 
+            MinElement = element;
+            }
+            document.getElementById("minrng").textContent = `Минимальное значение: ${MinElement}.`;
     }
 }
+}
+
 function NumberOfRepeatingNumbersInArray(array) {
     let i = 0;
     array.sort((a, b) => a - b);
