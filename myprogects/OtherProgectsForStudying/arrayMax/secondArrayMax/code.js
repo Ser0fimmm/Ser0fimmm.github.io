@@ -14,20 +14,24 @@ for (let index = 0; index < arr.length; index++) {//делаем цикл пер
 console.log("Максимальное число", max) // Максимальное число 90
 console.log("Второе максимальное число",secondmax) // Второе максимальное число 88
 
-arr1 = [1, 34, 5, 3, 56 ,9, 67 ,3, 0, 4, 35, 6] // 1 34 5 3 56 9 0 3 67 4 35 6
-function ReplaceMaxMin(array) {
-    let savearray = array;
-    let max = array.indexOf( Math.max.apply(null, array));
-    let min = Math.min(array);
-    console.log(max);
-    console.log(min);
-    array[max] = savearray[min];
-    array[min] = savearray[max];
-    
+
+function RandomNumberGnerator(min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
 }
+
+function FillArray(array, min, max) { 
+    for (let index = 0; index < array.length; index++) {
+        array[index] = RandomNumberGnerator(min, max) 
+    }
+}
+arr2 = new Array(5)
+FillArray(arr2, 10, 30)
+
+arr1 = [1, 34, 5, 3, 56 ,9, 67 ,3, 0, 4, 35, 6] // 1 34 5 3 56 9 0 3 67 4 35 6
+
+   
 ReplaceMaxMin(arr1)
 console.log(arr1)
-/* 
-сделать пересенную куда будет записан порыдковый номер максимального числа и такую же для минимального
-
-*/
+console.log(arr2)
+ReplaceMaxMin(arr2)
+console.log(arr2)

@@ -191,3 +191,13 @@ function DifferenceAraayElementsFromAToB(array, a, b) {
     }
     return diff;
 }
+/**
+ * Поменять местами максимальное и минимальное значение в масиве
+ * @param {*} array Массив
+ */
+function ReplaceMaxMin(array) {
+    minIndex = array.indexOf(Math.min(...array)),
+    maxIndex = array.indexOf(Math.max(...array));
+
+[array[minIndex], array[maxIndex]] = [array[maxIndex], array[minIndex]]
+}
