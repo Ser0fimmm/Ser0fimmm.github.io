@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "FirstName": "Иван",
+    "LastName": "Иванов",
+    "phone": "+79204512238",
+    "email": "ivanov@example.com",
+    "city": "Москва"
+  },
+  {
+    "id": 2,
+    "FirstName": "Павел",
+    "LastName": "Павлов",
+    "phone": "+79201234567",
+    "email": "pavlov@example.com",
+    "city": "Санкт-Петербург"
+  }
+]

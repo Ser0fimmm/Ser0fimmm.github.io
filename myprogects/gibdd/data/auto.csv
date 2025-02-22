@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "color": "Синий",
+    "licensePlate": "В004КО"
+  },
+  {
+    "id": 2,
+    "brand": "KIA",
+    "model": "Sportage",
+    "color": "Черный",
+    "licensePlate": "В777ОР"
+  }
+]

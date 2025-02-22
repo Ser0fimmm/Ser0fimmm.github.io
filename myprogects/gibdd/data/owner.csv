@@ -1,0 +1,14 @@
+[
+  {
+    "userid": 1,
+    "autoid": 1,
+    "RegDate": "20.04.2020",
+    "DeregDate": "20.04.2024"
+  },
+  {
+    "userid": 2,
+    "autoid": 2,
+    "RegDate": "31.03.2019",
+    "DeregDate": "31.03.2023"
+  }
+]
