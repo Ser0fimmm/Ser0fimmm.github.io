@@ -1,0 +1,56 @@
+h1 {
+    align-items: center;
+    text-align: center;
+}
+
+body {
+    background-color: #ebebeb;
+}
+
+.container {
+    position: absolute;
+    display: inline-flex;
+    justify-content: space-evenly;
+    left: 8%;
+    margin: 20px;
+    width: 80%;
+    height: 65%;
+    border: black 1px solid;
+    background-color: #bbbb;
+
+}
+
+section {
+    max-width: 30%;
+}
+
+.users {
+
+    border: black 1px solid;
+
+    text-align: center;
+    word-spacing: 3px;
+}
+
+.autos {
+
+
+    border: black 1px solid;
+
+
+    text-align: center;
+}
+
+.owners {
+
+    border: black 1px solid;
+
+
+    text-align: center;
+}
+.regauto {
+    border: black 1px solid;
+
+
+    text-align: center;
+}

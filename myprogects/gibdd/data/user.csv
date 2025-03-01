@@ -1,18 +1,3 @@
-[
-  {
-    "id": 1,
-    "FirstName": "Иван",
-    "LastName": "Иванов",
-    "phone": "+79204512238",
-    "email": "ivanov@example.com",
-    "city": "Москва"
-  },
-  {
-    "id": 2,
-    "FirstName": "Павел",
-    "LastName": "Павлов",
-    "phone": "+79201234567",
-    "email": "pavlov@example.com",
-    "city": "Санкт-Петербург"
-  }
-]
+id,FirstName,LastName,phone,email,city
+1,Иван,Иванов,+79204512238,ivanov@example.com,Москва
+2,Павел,Павлов,+79201234567,pavlov@example.com,Санкт-Петербург

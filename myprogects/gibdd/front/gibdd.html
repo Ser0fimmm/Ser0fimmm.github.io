@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя ГИБДД</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="code.js"></script>
+
+    <h1>Моя ГИБДД</h1>
+
+    <div class="container">
+        <section class="users">
+            <p>Пользователи</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>Телефон</th>
+                        <th>Почта</th>
+                        <th>Город</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+
+        <section class="autos">
+             <p>Автомобили</p>
+             <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Марка</th>
+                        <th>Модель</th>
+                        <th>Цвет</th>
+                        <th>госномер</th>
+                    </tr>
+                </thead>
+        </section>
+
+        <section class="owners">
+            <p>Владельцы</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Владельца</th>
+                        <th>ID автомобиля</th>
+                        <th>Дата постанвлени на учет</th>
+                        <th>Дата снятия с учета</th>
+                    </tr>
+                </thead>
+        </section>
+        
+        <section class="regauto">
+            <p>Регистрация авто</p>
+            <form action="" id="reg-auto-form">
+                <label for="owner-select">Владелец:</label>
+                <select id="owner-select"></select>
+            </form>
+            <form action="" id="auto-select-form">
+                <label for="auto-select">Автомобиль:</label>
+                <select id="auto-select"></select>
+            </form>
+            <button id="sumbit">Зарегестрировать</button>
+            <p>Принадлежащие авто:</p>
+            <ul id="owned-auto-list"></ul>
+        </section>
+    </div>
+</body>
+</html>

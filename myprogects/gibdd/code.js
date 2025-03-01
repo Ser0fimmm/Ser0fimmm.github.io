@@ -31,10 +31,11 @@ function SaveToJSON(data, fileName) {
     fs.writeFileSync(path.join(__dirname, `data`, fileName),content, `utf-8`);
     console.log(`Данные сохранены в ${fileName}`)
 }
+
 SaveToCSV(users, `user.csv`)
 SaveToCSV(autos, `auto.csv`)
 SaveToCSV(owners, `owner.csv`)
 
-SaveToJSON(users, `user.csv`)
-SaveToJSON(autos, `auto.csv`)
-SaveToJSON(owners, `owner.csv`)
+SaveToJSON(users, `user.json`)
+SaveToJSON(autos, `auto.json`)
+SaveToJSON(owners, `owner.json`)
