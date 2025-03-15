@@ -91,4 +91,5 @@ document.addEventListener(`DOMContentLoaded`, () => {
         RenderOwersTable()
         RenderOwnerSelect()
     }
+    init()
 })
