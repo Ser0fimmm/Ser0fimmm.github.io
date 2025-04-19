@@ -53,6 +53,31 @@ function findClosestElements(arr) {
     return result.sort((a, b) => a - b);
 }
 
-const array = [4, 31, 52, 97, 10, 43];
+let array = [4, 31, 52, 97, 10, 43];
 const result = findClosestElements(array);
 console.log(" bbw" + result); // 4, 10
+
+function sumwout(arr, a, b) {
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+       if (i < a){ sum += arr[i]} 
+       if (i > b){ sum += arr[i]}
+}
+    return sum
+}
+let m = [5, -1, 1, 5, 4, 3]
+console.log(sumwout(m, 1, 4))
+
+function matrixw(array, a) {
+    let s = 1
+    for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array.length; j++) {
+            if (i = a)
+            s *= array[j][i]
+            } 
+        
+        
+    }
+    return s
+}
+console.log(matrixw(arr, 0))
