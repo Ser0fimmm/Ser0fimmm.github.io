@@ -80,4 +80,26 @@ function matrixw(array, a) {
     }
     return s
 }
-console.log(matrixw(arr, 0))
+//console.log(matrixw(arr, 0))
+
+function findMaxInColumns(matrix) {
+  
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+    const maxInColumns = [];
+  
+    for (let col = 0; col < cols; col++) {
+      let max = matrix[0][col]; 
+  
+      for (let row = 1; row < rows; row++) {
+        if (matrix[row][col] > max) {
+          max = matrix[row][col];
+        }
+      }
+  
+      maxInColumns.push(max);
+    }
+  
+    return maxInColumns;
+}
+console.log(findMaxInColumns(arr))
