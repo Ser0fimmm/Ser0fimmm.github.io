@@ -181,3 +181,18 @@ function findlocalmaxtest(array, array1) {
     return test
 }
 console.log(findlocalmaxtest(arr, arr1))  
+function chuzoysredisvoix(array) {
+    let row1 = []
+    let minimals = []
+    for (let col = 0; col < array.length; col++) {
+        for (let row = 0; row < array[0].length; row++) {
+            const element = array[row][col];
+            row1.push(element)
+            
+        }
+        minimals.push(Math.min(...row1))
+        row1 =[]
+    }
+    return Math.max(minimals)
+}
+console.log(chuzoysredisvoix(arr))
