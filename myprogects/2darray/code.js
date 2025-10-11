@@ -144,7 +144,7 @@ function findlocalmax(array) {
     }
     return array
 }
-let lox = 
+let array2d = 
 [[3, -2, -5, -5, 8, -4, -1, -23, -11, -20], 
 [-4, -6, 16, 9, -8, 2, 10, -32, -18, -13], 
 [21, 7, -6, -3, 34, -7, -23, 25, 27, 38], 
@@ -155,7 +155,7 @@ let lox =
 [114, 108, 33, 61, -4, 131, 34, -26, 47, -17], 
 [37, 56, 135, -12, 34, 67, -17, 14, 93, -67], 
 [-4, 23, 175, -44, 30, -38, 89, 159, 28, 178]]
-let lox2 = findlocalmax(lox)
+let lox2 = findlocalmax(array2d)
 console.log(lox2)
 let arr1 = findlocalmax(arr)
 function findlocalmaxtest(array, array1) {
